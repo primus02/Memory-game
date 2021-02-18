@@ -1,6 +1,28 @@
 
 
+/*______________________________________________________________________nav*/
 
+/*change color for the nav */
+
+
+
+/*_______________________________________________________________________*/
+
+#firstgame{
+height: 250px;
+width: 70%;
+border: 1px solid black;
+margin-left:20%;
+
+}
+
+#secondgame{
+height: 250px;
+width: 70%;
+border: 1px solid black;
+
+
+}
 
 
 /*________________________________________________________________________game-12cards.html*/
@@ -10,17 +32,22 @@
     padding: 0;
 }
 
+#title12cards{
+    text-align: center;
+}
+
 /* add a backgroung color later */
 
 
-.container{
-    width: 1325px;
+.containergame{
+    width: 85%;
     height: 500px;
     border: 1px solid #111;
     position: relative;
     margin: 10px auto;
     border-radius: 10px;
     background-color: blueviolet;
+
 
 }
 
@@ -29,7 +56,9 @@
     height: 240px;
     position: absolute;
     border-radius: 10px;
-    border: solid;
+    perspective: 600px;
+   
+   
 }
 
 
@@ -39,10 +68,40 @@
    height: 100%;
    position: absolute;
     border-radius: 10px;
-
+    background-repeat: no-repeat;
+ 
+transition: all 1s;
+backface-visibility: hidden;
 }
 
+/* change image for another one*/
 .back{
-  background: url("assets/images/backface1.jpg");
+  
+  background: url("../images/backface1.jpg");
+       background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
+.back.turned{
+   transform: rotateY(180deg);
+}
+
+.front{
+   transform: rotateY(-180deg);
+   background: url("../images/sweden-flag.jpg");
+       background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.front.turned{
+   transform: rotateY(0deg);
+}
+
+
+.card:hover{
+   box-shadow: 0 0 10px #000;
 }
