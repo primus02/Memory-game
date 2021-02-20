@@ -17,6 +17,8 @@
 
     function startGame(){
 
+      images = randomCards(images);
+
      var frontFaces = document.getElementsByClassName("front");
         
         for(var i = 0; i < 24; i++){
@@ -30,7 +32,31 @@
 			frontFaces[i].setAttribute("id",images[i].id);
             
 		}
-	}
+    }
+    
+    function randomCards(oldArray){
+          //var i = Math.floor(Math.random()*16);
+          //verifica se o elemento indicado  existe no novo array
+			//if(newArray.indexOf(oldArray[i]) < 0){
+				//caso o elemento nao exista ele vai ser inserido
+                //newArray.push(oldArray[i]);
+                
+
+                var newArray = [];
+
+                while(newArray.length !== oldArray.length){
+                    var i = Math.floor(Math.random()*oldArray.length);
+
+                    if(newArray.indexOf(oldArray[i]) < 0){
+                        newArray.push(oldArray[i]);
+                    }
+                }	
+                
+                
+                return newArray;
+    }
+
+
 function turnCard(){
     var faces = this.getElementsByClassName("face");
     faces[0].classList.toggle("turned");
@@ -39,3 +65,5 @@ function turnCard(){
      }
 
 }());
+
+
