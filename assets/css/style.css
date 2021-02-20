@@ -1,5 +1,4 @@
 
-
 /*______________________________________________________________________nav*/
 
 /*change color for the nav */
@@ -52,8 +51,8 @@ border: 1px solid black;
 }
 
 .card{
-    width: 160px;
-    height: 240px;
+    width: 100px;
+    height: 150px;
     position: absolute;
     border-radius: 10px;
     perspective: 600px;
@@ -89,19 +88,28 @@ backface-visibility: hidden;
 
 .front{
    transform: rotateY(-180deg);
-   background: url("../images/sweden-flag.jpg");
-       background-repeat: no-repeat;
+  background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  
 }
 
 
 
 .front.turned{
    transform: rotateY(0deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+
+
+
 
 
 .card:hover{
    box-shadow: 0 0 10px #000;
 }
+
+
