@@ -98,9 +98,7 @@ backface-visibility: hidden;
 
 .front.turned{
    transform: rotateY(0deg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+   
 }
 
 
