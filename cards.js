@@ -1,5 +1,7 @@
 (function (){
-	var images = [];
+    var images = [];
+    
+    var turnedCards = [];
 	
 	//structure for the images
 	for(var i = 0; i < 24; i++){
@@ -17,6 +19,7 @@
 
     function startGame(){
 
+        turnedCards = [];
       images = randomCards(images);
 
      var frontFaces = document.getElementsByClassName("front");
@@ -29,7 +32,10 @@
             card.addEventListener("click",turnCard,false);
             
             frontFaces[i].style.background = "url('"+ images[i].src +"')";
-			frontFaces[i].setAttribute("id",images[i].id);
+            frontFaces[i].setAttribute("id",images[i].id);
+            
+
+            //cards background needs to be adjusted in javscript 
             
 		}
     }
@@ -58,9 +64,27 @@
 
 
 function turnCard(){
-    var faces = this.getElementsByClassName("face");
+    if (turnedCards.length < 2) {
+  var faces = this.getElementsByClassName("face");
+
+  if(faces[0].classList.length > 2) {
+      return;
+  }
+
     faces[0].classList.toggle("turned");
     faces[1].classList.toggle("turned");
+
+    turnedCards.push(this);
+    } else {
+        turnedCards[0].childNodes[1].classList.toggle("turned");
+         turnedCards[0].childNodes[3].classList.toggle("turned");
+
+              turnedCards[1].childNodes[1].classList.toggle("turned");
+         turnedCards[1].childNodes[3].classList.toggle("turned");
+
+         turnedCards = [];
+    }
+  
 
      }
 
